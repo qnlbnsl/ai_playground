@@ -1,18 +1,11 @@
-from transformers import pipeline
+import warnings
+from functions.classifier import *
+from functions.transcribe import gradio
 
+warnings.filterwarnings("ignore")
 
-def main(input_text):
-    # Initialize the text classification pipeline
-    classifier = pipeline('text-classification', model='distilbert-base-cased')
-
-    # Perform text classification on the input text
-    result = classifier(input_text, labels=["positive", "negative"])
-
-    # Print the predicted label and the associated confidence
-    print(f"Predicted label: {result[0]['label']}")
-    print(f"Confidence score: {result[0]['score']:.2f}")
-
-
+# Press Ctrl+F8 to toggle the breakpoint.
+# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    text = "This is a positive review of a product."
-    main(text)
+    classify("TEXT")
+    gradio().launch()

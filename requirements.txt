@@ -1,0 +1,3 @@
+transformers~=4.26.0
+gradio~=3.16.2
+pychatgpt~=0.4.3.3
