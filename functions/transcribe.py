@@ -1,8 +1,10 @@
+import os
+
 import whisper
 from pyChatGPT import ChatGPT
 import gradio as gr
 
-secret_token = ""  # Enter your session token here!
+secret_token = os.getenv('OPENAI_TOKEN')  # Enter your session token here!
 model = whisper.load_model("base")
 model.device
 

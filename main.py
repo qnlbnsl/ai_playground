@@ -1,6 +1,9 @@
 import warnings
 from functions.classifier import *
 from functions.transcribe import gradio
+from dotenv import load_dotenv
+
+load_dotenv()
 
 warnings.filterwarnings("ignore")
 
