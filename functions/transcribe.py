@@ -1,8 +1,6 @@
 import os
-
 import whisper
-from pyChatGPT import ChatGPT
-import gradio as gr
+
 
 secret_token = os.getenv('OPENAI_TOKEN')  # Enter your session token here!
 model = whisper.load_model("base")
@@ -25,22 +23,4 @@ def transcribe(audio):
     result = whisper.decode(model, mel, options)
     result_text = result.text
 
-
     return result_text
-
-
-def gradio():
-    output_1 = gr.Textbox(label="Speech to Text")
-    output_2 = gr.Textbox(label="ChatGPT Output")
-
-    return gr.Interface(
-        title='OpenAI Whisper and ChatGPT ASR Gradio Web UI',
-        fn=transcribe,
-        inputs=[
-            gr.inputs.Audio(source="microphone", type="filepath")
-        ],
-
-        outputs=[
-            output_1, output_2
-        ],
-        live=True)

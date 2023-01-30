@@ -16,3 +16,4 @@ def classify(input_text):
     # Print the predicted label and the associated confidence
     print(f"Predicted label: {result[0]['label']}")
     print(f"Confidence score: {result[0]['score']:.2f}")
+    return result

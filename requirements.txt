@@ -1,5 +1,14 @@
-transformers~=4.26.0
 gradio~=3.16.2
-pychatgpt~=0.4.3.3
-
 python-dotenv~=0.21.0
+transformers~=4.26.0
+numpy
+tqdm
+ffmpeg-python==0.2.0
+pyaudio
+SpeechRecognition
+pydub
+git+https://github.com/openai/whisper.git
+torch
+torchvision
+torchaudio
+--extra-index-url https://download.pytorch.org/whl/cu117
